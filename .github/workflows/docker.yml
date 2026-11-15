@@ -27,7 +27,9 @@ concurrency:
 
 env:
   IMAGE: ghcr.io/${{ github.repository }}
-  PUSH: ${{ github.event_name != 'pull_request' && !github.event.repository.fork }}
+  # Fork variant: the upstream rule keeps a fork out of the owner's registry, but this fork's own image
+  # (ghcr.io/LS80/homeassistant_espscreen) is what Unraid runs, so publish on every push here.
+  PUSH: ${{ github.event_name != 'pull_request' }}
 
 jobs:
   image:

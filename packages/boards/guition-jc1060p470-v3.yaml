@@ -80,6 +80,9 @@ esphome:
 # firmware does not run on a rev3 chip (GitHub #397). This board file's value wins over that file's.
 esp32:
   engineering_sample: false
+  framework:
+    advanced:
+      loop_task_stack_size: 32768
 
 # ESPHome has no model for this panel yet (pull request 18695 adds `JC1060P470-V2`), so it is described in full:
 # the timings and the init table of Guition's own driver for the new panel (JC1060P470C_I_W_Y.zip, 2026-07-13,

@@ -15,4 +15,4 @@ esp32:
       # needs about 8.1-8.3 KB of stack on the CYD and the Guition (firmware 0.3.1, measured with the health line
       # loop_stack_min_free), past ESPHome's 8 KB default: the Guition rebooted with a stack overflow on its first
       # 2x2 save. 16 KB keeps half of it spare for what comes next; the CYD still had 145 KB of heap free with it.
-      loop_task_stack_size: 16384
+      loop_task_stack_size: 32768
